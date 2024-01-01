@@ -1,27 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  background-color: #202324;
+  color: #aba499;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #575e62;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #484e51;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #181a1b;
+}
+
+* {
+  scrollbar-color: #202324 #454a4d;
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 11, 11, 15;
+  --background-end-rgb: 11, 11, 15;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 11, 11, 15;
+    --background-end-rgb: 11, 11, 15;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  @apply font-montserrat
+}
+
+@layer components {
+  .input {
+    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray outline-none border-0 bg-transparent border-b-2 border-white border-solid p-2 pl-0 pb-1 font-montserrat;
+  }
 }
